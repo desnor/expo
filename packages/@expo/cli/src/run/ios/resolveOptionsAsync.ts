@@ -62,7 +62,7 @@ function getDefaultUserTerminal(): string | undefined {
 /** Resolve the native iOS build `scheme` for a given `configuration`. If the `scheme` isn't provided then the user will be prompted to select one. */
 export async function resolveNativeSchemeAsync(
   projectRoot: string,
-  { scheme, configuration }: { scheme?: string | true; configuration?: XcodeConfiguration }
+  { scheme, configuration }: { scheme?: string | boolean; configuration?: XcodeConfiguration }
 ): Promise<{ name: string; osType?: string } | null> {
   const schemes = IOSConfig.BuildScheme.getRunnableSchemesFromXcodeproj(projectRoot, {
     configuration,
